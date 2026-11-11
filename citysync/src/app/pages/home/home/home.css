@@ -1,0 +1,20 @@
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f8ff;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #174ea6;
+  font-size: 36px;
+}
+
+p {
+  color: #555;
+  font-size: 18px;
+}
