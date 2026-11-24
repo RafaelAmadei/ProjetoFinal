@@ -1,0 +1,62 @@
+
+<app-header></app-header>
+
+<main class="cadastro-container">
+
+  <section class="cadastro-titulo">
+    <h1>Registrar ocorrência</h1>
+    <p>Ajude a melhorar sua cidade informando um problema urbano.</p>
+  </section>
+
+  <form (ngSubmit)="cadastrar()">
+
+    <label for="titulo">Título da ocorrência</label>
+    <input
+      id="titulo"
+      type="text"
+      name="titulo"
+      [(ngModel)]="titulo"
+      placeholder="Ex: Buraco na rua"
+      required
+    >
+
+    <label for="categoria">Categoria</label>
+    <select
+      id="categoria"
+      name="categoria"
+      [(ngModel)]="categoria"
+      required
+    >
+      <option value="">Selecione uma categoria</option>
+      <option value="buracos">Buracos nas ruas</option>
+      <option value="iluminacao">Iluminação pública</option>
+      <option value="lixo">Acúmulo de lixo</option>
+    </select>
+
+    <label for="local">Localização</label>
+    <input
+      id="local"
+      type="text"
+      name="local"
+      [(ngModel)]="local"
+      placeholder="Ex: Centro - Rua principal"
+      required
+    >
+
+    <label for="descricao">Descrição do problema</label>
+    <textarea
+      id="descricao"
+      name="descricao"
+      [(ngModel)]="descricao"
+      placeholder="Descreva o problema encontrado..."
+      rows="5"
+      required
+    ></textarea>
+
+    <button type="submit" mat-raised-button color="primary">
+      {{ idEdicao !== null ? 'Salvar alterações' : 'Cadastrar ocorrência' }}
+    </button>
+
+  </form>
+
+</main>

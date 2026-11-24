@@ -1,0 +1,77 @@
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 1px 0;
+  box-sizing: border-box;
+  background-image:
+    linear-gradient(rgba(15, 38, 75, 0.55), rgba(15, 38, 75, 0.55)),
+    url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=85');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.cadastro-container {
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cadastro-titulo {
+  margin-bottom: 30px;
+}
+
+.cadastro-titulo h1 {
+  color: #174ea6;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.cadastro-titulo p {
+  color: #666;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #d5dce5;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 20px;
+  padding: 22px;
+}
+
+@media (max-width: 800px) {
+  .cadastro-container {
+    margin: 25px 15px;
+    padding: 22px;
+  }
+}

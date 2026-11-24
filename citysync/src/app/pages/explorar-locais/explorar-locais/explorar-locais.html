@@ -1,0 +1,152 @@
+
+<app-header></app-header>
+
+<main class="explorar-container">
+
+  <section class="explorar-titulo">
+    <h1>Explore locais</h1>
+    <p>Encontre problemas urbanos e acompanhe as ocorrências da sua cidade.</p>
+  </section>
+
+  <section class="filtros">
+
+    <section class="dashboard-indicadores">
+
+      <div class="indicador">
+        <span>Total de ocorrências</span>
+        <strong>{{ totalOcorrencias }}</strong>
+      </div>
+
+      <div class="indicador">
+        <span>Pendentes</span>
+        <strong>{{ ocorrenciasPendentes }}</strong>
+      </div>
+
+      <div class="indicador">
+        <span>Resolvidas</span>
+        <strong>{{ ocorrenciasResolvidas }}</strong>
+      </div>
+
+    </section>
+
+    <h2>Filtrar ocorrências</h2>
+
+    <input
+      type="text"
+      placeholder="Pesquisar por bairro, rua ou ocorrência..."
+      class="campo-pesquisa"
+      [value]="pesquisa"
+      (input)="pesquisa = $any($event.target).value"
+    />
+
+    <select (change)="categoriaSelecionada = $any($event.target).value">
+      <option value="">Todas as categorias</option>
+      <option value="buracos">Buracos nas ruas</option>
+      <option value="iluminacao">Iluminação pública</option>
+      <option value="lixo">Acúmulo de lixo</option>
+    </select>
+
+    <select (change)="statusSelecionado = $any($event.target).value">
+      <option value="">Todas as situações</option>
+      <option value="Pendente">Pendente</option>
+      <option value="Em andamento">Em andamento</option>
+      <option value="Resolvida">Resolvida</option>
+    </select>
+
+  </section>
+
+  <div class="resumo-explorar">
+
+    <div>
+      <strong>{{ ocorrenciasFiltradas.length }}</strong>
+      <span>Ocorrências encontradas</span>
+    </div>
+
+    <div>
+      <strong>{{ ocorrencias.length }}</strong>
+      <span>Total de registros</span>
+    </div>
+
+  </div>
+
+  <section class="lista-ocorrencias">
+
+    <h2>Ocorrências na sua região</h2>
+
+    <div class="grade-ocorrencias">
+
+      <article
+        class="card-ocorrencia"
+        *ngFor="let ocorrencia of ocorrenciasFiltradas"
+      >
+
+        <div class="imagem-card"
+ [ngClass]="{
+  'imagem-buracos': ocorrencia.categoria === 'buracos',
+  'imagem-iluminacao': ocorrencia.categoria === 'iluminacao',
+  'imagem-lixo': ocorrencia.categoria === 'lixo'
+ }">
+  <span>{{ ocorrencia.imagem }}</span>
+</div>
+
+        <div class="conteudo-card">
+
+          <select
+            class="status"
+            [value]="ocorrencia.status"
+            (change)="alterarStatus(ocorrencia.id, $any($event.target).value)"
+          >
+            <option value="Pendente">Pendente</option>
+            <option value="Em andamento">Em andamento</option>
+            <option value="Resolvida">Resolvida</option>
+          </select>
+
+          <h3>{{ ocorrencia.titulo }}</h3>
+
+          <p>{{ ocorrencia.local }}</p>
+
+          <p>{{ ocorrencia.descricao }}</p>
+
+          <div class="acoes-ocorrencia">
+
+            <button
+              type="button"
+              (click)="alertaDetalhes(ocorrencia)"
+            >
+              Ver detalhes
+            </button>
+
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="['/registrar-ocorrencia']"
+              [queryParams]="{ editar: ocorrencia.id }"
+            >
+              Editar
+            </button>
+
+            <button
+              mat-raised-button
+              color="warn"
+              (click)="excluirOcorrencia(ocorrencia.id)"
+            >
+              Excluir
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="sem-resultados" *ngIf="ocorrenciasFiltradas.length === 0">
+      <span>🔎</span>
+      <h3>Nenhuma ocorrência encontrada</h3>
+      <p>Tente alterar os filtros ou pesquisar por outro termo.</p>
+    </div>
+
+  </section>
+
+</main>

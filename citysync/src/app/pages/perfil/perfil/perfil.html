@@ -1,0 +1,79 @@
+<app-header></app-header>
+
+<main class="perfil-container">
+
+  <section class="perfil-titulo">
+    <h1>Meu perfil</h1>
+    <p>Gerencie suas informações e acompanhe sua participação no CitySync.</p>
+  </section>
+
+  <section class="perfil-informacoes">
+
+    <div class="perfil-foto">
+      <span>👤</span>
+    </div>
+
+    <div class="perfil-dados">
+
+      <div *ngIf="!editando">
+        <h2>{{ nome }}</h2>
+        <p>{{ email }}</p>
+        <p>📍 {{ cidade }}</p>
+
+        <button type="button" (click)="editando = !editando">
+  {{ editando ? 'Fechar edição' : 'Editar perfil' }}
+</button>
+      </div>
+
+      <div *ngIf="editando">
+        <h2>Editar informações</h2>
+
+        <input type="text" [(ngModel)]="nome" placeholder="Nome">
+        <input type="email" [(ngModel)]="email" placeholder="E-mail">
+        <input type="text" [(ngModel)]="cidade" placeholder="Cidade">
+
+        <button (click)="salvarPerfil()">Salvar</button>
+        <button (click)="editando = false">Cancelar</button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="perfil-estatisticas">
+
+    <div class="estatistica">
+      <strong>{{ totalOcorrencias }}</strong>
+      <span>Ocorrências registradas</span>
+    </div>
+
+    <div class="estatistica">
+      <strong>{{ ocorrenciasResolvidas }}</strong>
+      <span>Ocorrências resolvidas</span>
+    </div>
+
+    <div class="estatistica">
+      <strong>{{ ocorrenciasAndamento }}</strong>
+      <span>Em andamento</span>
+    </div>
+
+  </section>
+
+  <section class="perfil-historico">
+
+    <h2>Ocorrências cadastradas</h2>
+
+    <div *ngFor="let ocorrencia of ocorrencias">
+      <h3>{{ ocorrencia.titulo }}</h3>
+      <p>📍 {{ ocorrencia.local }}</p>
+      <p>Status: {{ ocorrencia.status }}</p>
+      <hr>
+    </div>
+
+    <p *ngIf="ocorrencias.length === 0">
+      Nenhuma ocorrência cadastrada ainda.
+    </p>
+
+  </section>
+
+</main>

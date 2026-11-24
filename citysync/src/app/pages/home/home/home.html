@@ -1,10 +1,217 @@
+<app-header></app-header>
 
-<div class="home-container">
+<main class="home-container">
 
-  <h1>Bem-vindo ao CitySync!</h1>
+  <section class="hero">
+    <div class="campo-pesquisa">
+  <input
+    type="text"
+    placeholder="Pesquise uma ocorrência ou local..."
+  >
 
-  <p>
-    Sua cidade melhor começa com a sua participação.
+  <button>Pesquisar</button>
+</div>
+    <h1>Sua voz transforma nossa cidade.</h1>
+
+<p>
+  Encontre problemas urbanos, compartilhe informações
+  e ajude a construir uma cidade melhor para todos.
+</p>
+
+    <button class="btn-ocorrencia">
+      Registrar ocorrência
+    </button>
+  </section>
+  <div class="localizacao">
+  <span>📍</span>
+  <p>Mostrando resultados para <strong>Ourinhos - SP</strong></p>
+</div>
+  <section class="indicadores">
+
+  <div class="indicador">
+    <h2>120</h2>
+    <p>Ocorrências registradas</p>
+  </div>
+
+  <div class="indicador">
+    <h2>85</h2>
+    <p>Ocorrências resolvidas</p>
+  </div>
+
+  <div class="indicador">
+    <h2>35</h2>
+    <p>Ocorrências pendentes</p>
+  </div>
+
+</section>
+<section class="categorias">
+
+  <h2>Explore por categoria</h2>
+
+  <p class="subtitulo">
+  Encontre ocorrências de acordo com o tipo de problema urbano.
   </p>
 
-</div>
+  <div class="categorias-lista">
+
+    <div class="categoria">
+      <span>🕳️</span>
+      <h3>Buracos nas ruas</h3>
+    </div>
+
+    <div class="categoria">
+      <span>💡</span>
+      <h3>Iluminação pública</h3>
+    </div>
+
+    <div class="categoria">
+      <span>🗑️</span>
+      <h3>Acúmulo de lixo</h3>
+    </div>
+
+    <div class="categoria">
+      <span>🌳</span>
+      <h3>Áreas verdes</h3>
+    </div>
+
+    <div class="categoria">
+      <span>💧</span>
+      <h3>Vazamentos</h3>
+    </div>
+
+    <div class="categoria">
+      <span>🚦</span>
+      <h3>Sinalização</h3>
+    </div>
+
+  </div>
+
+</section>
+<section class="ocorrencias">
+
+  <h2>Ocorrências recentes</h2>
+
+  <p class="subtitulo">
+    Confira alguns problemas identificados pela comunidade.
+  </p>
+
+  <div class="ocorrencias-lista">
+
+  <div class="ocorrencia">
+    <div class="imagem-ocorrencia">🕳️</div>
+    <span class="status pendente">Pendente</span>
+    <h3>Buraco na via</h3>
+    <p>Rua Paraná - Centro</p>
+    <div class="detalhes">
+      <span>👍 24 avaliações</span>
+    </div>
+  </div>
+
+  <div class="ocorrencia">
+    <div class="imagem-ocorrencia">💡</div>
+    <span class="status andamento">Em andamento</span>
+    <h3>Iluminação precária</h3>
+    <p>Jardim América</p>
+    <div class="detalhes">
+      <span>👍 18 avaliações</span>
+    </div>
+  </div>
+
+  <div class="ocorrencia">
+    <div class="imagem-ocorrencia">🚦</div>
+    <span class="status pendente">Pendente</span>
+    <h3>Semáforo apagado</h3>
+    <p>Avenida Central</p>
+    <div class="detalhes">
+      <span>👍 32 avaliações</span>
+    </div>
+  </div>
+
+  <div class="ocorrencia">
+    <div class="imagem-ocorrencia">🗑️</div>
+    <span class="status resolvida">Resolvida</span>
+    <h3>Acúmulo de lixo</h3>
+    <p>Praça Central</p>
+    <div class="detalhes">
+      <span>👍 15 avaliações</span>
+    </div>
+  </div>
+
+<button class="btn-ver-ocorrencias">
+  Ver todas as ocorrências
+</button>
+  </div>
+
+</section>
+<section class="como-funciona">
+
+  <h2>Como funciona o CitySync?</h2>
+
+  <p class="subtitulo">
+    Participar da transformação da sua cidade é simples.
+  </p>
+
+  <div class="passos">
+
+    <div class="passo">
+      <span>1</span>
+      <h3>Identifique um problema</h3>
+      <p>Encontrou um problema na cidade? Registre sua ocorrência.</p>
+    </div>
+
+    <div class="passo">
+      <span>2</span>
+      <h3>Compartilhe com a comunidade</h3>
+      <p>Outras pessoas poderão visualizar e interagir com o registro.</p>
+    </div>
+
+    <div class="passo">
+      <span>3</span>
+      <h3>Acompanhe a solução</h3>
+      <p>Acompanhe as atualizações e o andamento da ocorrência.</p>
+    </div>
+
+  </div>
+
+</section>
+<footer class="rodape">
+
+  <div class="rodape-conteudo">
+
+    <div class="rodape-logo">
+      <h2>City<span>Sync</span></h2>
+
+      <p>
+        Mapeamento colaborativo de
+        necessidades urbanas da cidade.
+      </p>
+    </div>
+
+    <div class="rodape-coluna">
+      <h3>Plataforma</h3>
+      <p>Como funciona</p>
+      <p>Explorar locais</p>
+      <p>Ocorrências</p>
+    </div>
+
+    <div class="rodape-coluna">
+      <h3>Comunidade</h3>
+      <p>Diretrizes de utilização</p>
+      <p>Sobre nós</p>
+    </div>
+
+    <div class="rodape-coluna">
+      <h3>Contato</h3>
+      <p>Fale conosco</p>
+      <p>Suporte</p>
+    </div>
+
+  </div>
+
+  <div class="rodape-final">
+    <p>© 2026 CitySync. Todos os direitos reservados.</p>
+  </div>
+
+</footer>
+
+</main>

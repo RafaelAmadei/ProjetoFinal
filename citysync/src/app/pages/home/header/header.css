@@ -1,11 +1,28 @@
-
 .cabecalho {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 20px 8%;
   background-color: #ffffff;
   border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+  justify-self: start;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
 }
 
 .logo h2 {
@@ -56,4 +73,46 @@
   background-color: #174ea6;
   border: 1px solid #174ea6;
   color: #ffffff;
+}
+@media (max-width: 800px) {
+  .cabecalho {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 5%;
+  }
+
+  .menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .acoes {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 450px) {
+  .logo h2 {
+    font-size: 22px;
+  }
+
+  .acoes button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+.menu a.ativo {
+  color: #174ea6;
+  font-weight: bold;
+  border-bottom: 3px solid #174ea6;
+  padding-bottom: 8px;
+}
+.btn-perfil.perfil-ativo {
+  background-color: #0d3475;
+  border-color: #0d3475;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(23, 78, 166, 0.15);
 }

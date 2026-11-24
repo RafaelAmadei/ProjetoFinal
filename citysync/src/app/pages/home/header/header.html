@@ -6,14 +6,39 @@
   </div>
 
   <nav class="menu">
-    <a href="#">Início</a>
-    <a href="#">Ocorrências</a>
-    <a href="#">Como denunciar</a>
+    <a
+      routerLink="/"
+      routerLinkActive="ativo"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Página inicial
+    </a>
+
+    <a
+      routerLink="/explorar-locais"
+      routerLinkActive="ativo"
+    >
+      Explorar locais
+    </a>
+
+    <a
+      routerLink="/como-denunciar"
+      routerLinkActive="ativo"
+    >
+      Como Denunciar
+    </a>
   </nav>
 
   <div class="acoes">
     <button class="btn-entrar">Entrar</button>
-    <button class="btn-perfil">Meu perfil</button>
+
+    <button
+  class="btn-perfil"
+  routerLink="/perfil"
+  routerLinkActive="perfil-ativo"
+>
+  Meu perfil
+</button>
   </div>
 
 </header>

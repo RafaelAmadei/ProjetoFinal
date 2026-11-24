@@ -1,0 +1,132 @@
+.denunciar-container {
+  min-height: 85vh;
+  padding: 50px 8%;
+  background-image:
+    linear-gradient(rgba(238, 244, 255, 0.88), rgba(238, 244, 255, 0.88)),
+    url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=85');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
+
+.denunciar-titulo {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.denunciar-titulo h1 {
+  color: #174ea6;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.denunciar-titulo p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.etapas-denuncia {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.etapa {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #e1e9f8;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.etapa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(23, 78, 166, 0.08);
+}
+
+.etapa-numero {
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #174ea6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.etapa h2 {
+  color: #174ea6;
+  font-size: 19px;
+  margin: 0 0 8px;
+}
+
+.etapa p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+.denunciar-chamada {
+  max-width: 850px;
+  margin: 35px auto 0;
+  padding: 35px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #e1e9f8;
+  border-radius: 12px;
+}
+
+.denunciar-chamada h2 {
+  color: #174ea6;
+  font-size: 22px;
+}
+
+.denunciar-chamada p {
+  color: #666;
+  margin-bottom: 22px;
+}
+
+.denunciar-chamada button {
+  background-color: #174ea6;
+  color: white;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.denunciar-chamada button:hover {
+  background-color: #0d3475;
+}
+
+@media (max-width: 600px) {
+  .denunciar-container {
+    padding: 30px 5%;
+  }
+
+  .etapa {
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .denunciar-titulo h1 {
+    font-size: 28px;
+  }
+
+  .denunciar-chamada {
+    padding: 25px 15px;
+  }
+}
